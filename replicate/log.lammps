@@ -1,0 +1,301 @@
+LAMMPS (5 Jun 2019)
+  using 2 OpenMP thread(s) per MPI task
+package omp 0
+using multi-threaded neighbor list subroutines
+package omp 2
+using multi-threaded neighbor list subroutines
+
+
+# ----------------- Init Section -----------------
+
+include "system.in.init"
+  atom_style full
+  units real
+  bond_style harmonic
+  angle_style harmonic
+  dihedral_style hybrid opls multi/harmonic
+  improper_style harmonic
+  pair_style lj/cut/coul/cut/omp 10.0 10.0
+  pair_modify mix geometric
+  special_bonds lj/coul 0.0 0.0 0.5
+ # kspace_style pppm/omp 0.0001
+
+
+# ----------------- Atom Definition Section -----------------
+
+read_data "system.data"
+  orthogonal box = (-12 -12 -12) to (12 12 12)
+  3 by 3 by 4 MPI processor grid
+  reading atoms ...
+  89 atoms
+  scanning bonds ...
+  4 = max bonds/atom
+  scanning angles ...
+  6 = max angles/atom
+  scanning dihedrals ...
+  18 = max dihedrals/atom
+  scanning impropers ...
+  1 = max impropers/atom
+  reading bonds ...
+  88 bonds
+  reading angles ...
+  166 angles
+  reading dihedrals ...
+  224 dihedrals
+  reading impropers ...
+  4 impropers
+  4 = max # of 1-2 neighbors
+  12 = max # of 1-3 neighbors
+  16 = max # of 1-4 neighbors
+  20 = max # of special neighbors
+  special bonds CPU = 0.00196577 secs
+  read_data CPU = 0.0354521 secs
+
+# ----------------- Settings Section -----------------
+
+include "system.in.settings"
+  pair_coeff 1 1 0.066 3.5
+  pair_coeff 2 2 0.015 2.42
+  pair_coeff 3 3 0.066 3.5
+  pair_coeff 4 4 0.066 3.5
+  pair_coeff 5 5 0.066 3.5
+  pair_coeff 6 6 0.03 2.5
+  pair_coeff 7 7 0.026290630975 2.5
+  pair_coeff 8 8 0.105 3.1875
+  pair_coeff 9 9 0.168 3.108
+  pair_coeff 10 10 0.17 2.55
+  bond_coeff 1 570.0 1.229
+  bond_coeff 2 317.0 1.522
+  bond_coeff 3 214.0 1.327
+  bond_coeff 4 268.0 1.529
+  bond_coeff 5 320.0 1.41
+  bond_coeff 6 340.0 1.09
+  angle_coeff 1 80.0 120.4
+  angle_coeff 2 81.0 111.4
+  angle_coeff 3 83.0 123.4
+  angle_coeff 4 58.35 112.7
+  angle_coeff 5 63.0 111.1
+  angle_coeff 6 50.0 109.5
+  angle_coeff 7 33.0 107.8
+  angle_coeff 8 35.0 109.5
+  angle_coeff 9 35.0 109.5
+  angle_coeff 10 37.5 110.7
+  angle_coeff 11 83.0 116.9
+  dihedral_coeff 1 opls 0 0 0 0
+  dihedral_coeff 2 opls 0 0 0.3 0
+  dihedral_coeff 3 opls 0 0 0.3 0
+  dihedral_coeff 4 opls 0 0 0.198 0
+  dihedral_coeff 5 multi/harmonic 0.12451 -0.05525 0.21523 -0.35792 0.00000
+  dihedral_coeff 6 multi/harmonic 7.82321 -1.56610 -5.76158 0.00000 0.00000
+  dihedral_coeff 7 multi/harmonic 5.47900 0.00000 -5.76159 0.00000 0.00000
+  dihedral_coeff 8 multi/harmonic 0.04203 0.17213 -0.00219 -0.22454 0.00000
+  dihedral_coeff 9 multi/harmonic -1.69415 1.81105 1.25364 -1.25298 0.00000
+  dihedral_coeff 10 multi/harmonic -0.45247 -1.18743 0.62951 0.99079 0.00000
+  dihedral_coeff 11 multi/harmonic 0.73427 -0.87172 -1.24200 1.34707 0.00000
+  dihedral_coeff 12 multi/harmonic -0.17543 -0.44359 -0.01743 0.59287 0.00000
+  dihedral_coeff 13 multi/harmonic -1.44366 2.09530 0.62994 -1.24908 0.00000
+  dihedral_coeff 14 multi/harmonic 0.64119 0.38288 1.02834 -2.02259 0.00000
+  improper_coeff 1 10.5 180.0
+  set type 1 charge 0.0
+  1 settings made for charge
+  set type 2 charge 0.03
+  8 settings made for charge
+  set type 3 charge 0.19
+  4 settings made for charge
+  set type 4 charge -0.222
+  4 settings made for charge
+  set type 5 charge -0.148
+  16 settings made for charge
+  set type 6 charge 0.074
+  12 settings made for charge
+  set type 7 charge 0.074
+  32 settings made for charge
+  set type 8 charge 0.75
+  4 settings made for charge
+  set type 9 charge -0.55
+  4 settings made for charge
+  set type 10 charge -0.45
+  4 settings made for charge
+
+
+# ----------------- Charges Section -----------------
+
+# include "system.in.charges"
+
+
+# ----------------- Run Section -----------------
+
+# Build a system by replicate a single molecule
+# FF: LOPLS, created by moltemplate
+
+# Define parameters
+variable T equal 298 # Temeperature [k]
+variable DT equal 0.25 # time step [fs]
+
+neigh_modify every 1 delay 0 check yes
+
+replicate 5 5 5
+  orthogonal box = (-12 -12 -12) to (108 108 108)
+  3 by 3 by 4 MPI processor grid
+  11125 atoms
+  11000 bonds
+  20750 angles
+  28000 dihedrals
+  500 impropers
+  4 = max # of 1-2 neighbors
+  12 = max # of 1-3 neighbors
+  16 = max # of 1-4 neighbors
+  20 = max # of special neighbors
+  special bonds CPU = 0.00152071 secs
+  replicate CPU = 0.0111786 secs
+
+# energy minimization
+minimize 	1e-10 1e-10 100000 100000
+Last active /omp style is improper_style harmonic/omp
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 20 20 20
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/cut/omp, perpetual
+      attributes: half, newton on, omp
+      pair build: half/bin/newton/omp
+      stencil: half/bin/3d/newton
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 16.97 | 17.2 | 18.01 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            0     271666.9    30812.416    302479.32     44070.13 
+      18            0   -2233.0067     8994.656    6761.6493   -118.61065 
+Loop time of 0.0876715 on 72 procs for 18 steps with 11125 atoms
+
+187.8% CPU use with 36 MPI tasks x 2 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+         302479.317458      6761.64933392      6761.64933392
+  Force two-norm initial, final = 390571 550.329
+  Force max component initial, final = 20096 14.7937
+  Final line search alpha, max atom move = 2.60213e-14 3.84952e-13
+  Iterations, force evaluations = 18 102
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0085237  | 0.020232   | 0.028516   |   4.1 | 23.08
+Bond    | 0.0070424  | 0.013218   | 0.021719   |   3.1 | 15.08
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.021791   | 0.047892   | 0.066561   |   4.6 | 54.63
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.00052497 | 0.001984   | 0.017521   |   8.8 |  2.26
+Other   |            | 0.004346   |            |       |  4.96
+
+Nlocal:    309.028 ave 506 max 146 min
+Histogram: 3 2 7 4 5 4 5 2 2 2
+Nghost:    1127.47 ave 1830 max 614 min
+Histogram: 4 1 7 5 6 5 3 2 2 1
+Neighs:    9638.89 ave 14800 max 3968 min
+Histogram: 2 4 4 4 4 6 0 4 0 8
+
+Total # of neighbors = 347000
+Ave neighs/atom = 31.191
+Ave special neighs/atom = 10.7416
+Neighbor list builds = 0
+Dangerous builds = 0
+velocity       all create $T 1544652606 mom yes rot yes dist gaussian
+velocity       all create 298 1544652606 mom yes rot yes dist gaussian
+
+fix NPT all npt/omp temp ${T} ${T} $(100.0*dt) iso 1.0 1.0 $(50.0*dt) # Nose-Hoover thermostat
+fix NPT all npt/omp temp 298 ${T} $(100.0*dt) iso 1.0 1.0 $(50.0*dt) 
+fix NPT all npt/omp temp 298 298 $(100.0*dt) iso 1.0 1.0 $(50.0*dt) 
+fix NPT all npt/omp temp 298 298 100 iso 1.0 1.0 $(50.0*dt) 
+fix NPT all npt/omp temp 298 298 100 iso 1.0 1.0 50 
+thermo_style custom step temp pe etotal press vol density
+thermo 5000
+# dump myDump all atom 5000 pec6opls.lammpstrj
+run 200000
+Last active /omp style is improper_style harmonic/omp
+Per MPI rank memory allocation (min/avg/max) = 15.84 | 16.08 | 16.88 Mbytes
+Step Temp PotEng TotEng Press Volume Density 
+      18          298    6761.6493    16642.892    142.78639      1728000  0.063510689 
+    5000    297.45754    10005.619    19868.874   -8.6758483      2216790  0.049506932 
+   10000    299.70663     9735.994    19673.826   -133.14021    667340.62   0.16445346 
+   15000     300.9013    10012.772    19990.217  -0.97608199    321825.96   0.34101186 
+   20000     297.9007     9479.698    19357.648   -736.60563    190653.07   0.57563443 
+   25000    294.99956    6855.4824    16637.234   -33.495793    144016.24   0.76204232 
+   30000    299.44709    6557.0855    16486.311   -1314.3173    131509.46   0.83451389 
+   35000    298.09871    7012.8494    16897.365    327.70399    125897.69   0.87171154 
+   40000    293.88846    6424.0049    16168.914    433.06359    119947.23   0.91495623 
+   45000    295.86277    5766.6974    15577.072   -156.92613    117307.72   0.93554347 
+   50000     298.0909    6074.7294    15958.986   -850.93891    116369.53   0.94308596 
+   55000    294.45947    6404.9289    16168.772   -1043.7678     115788.1   0.94782167 
+   60000    295.74731      5865.14    15671.687   -73.215081    115303.51   0.95180509 
+   65000    297.00884    5898.2511    15746.628   -33.126048    114793.38   0.95603486 
+   70000    295.35774    6915.6266    16709.255    557.37287     114592.6   0.95770992 
+   75000    299.92624    6186.9649    16132.078    -323.0293    114323.68   0.95996271 
+   80000    297.17986    5620.1688    15474.216     523.0537    113801.56   0.96436697 
+   85000    305.90183    5794.0253    15937.281    353.30053    113606.98   0.96601875 
+   90000    296.41653     6996.338    16825.075   -164.90314    114321.95   0.95997727 
+   95000    297.25632    5640.1693    15496.752    98.264394    114400.51   0.95931799 
+  100000      291.858    6209.2132    15886.796   -815.52275    113794.61   0.96442589 
+  105000    296.54261    5905.3328     15738.25    876.50139    113882.67   0.96368014 
+  110000    297.40937    6819.0206    16680.678    148.53607    113905.92   0.96348345 
+  115000    298.53289    5891.0931    15790.005   -1023.7618    114639.32   0.95731962 
+  120000    297.43529    5812.2836    15674.801    660.38134    113812.39   0.96427528 
+  125000    296.98559    6116.0017    15963.608    467.74589    113592.08   0.96614542 
+  130000    297.54599    6236.8905    16103.078    241.90919    113435.54   0.96747875 
+  135000     293.3303    6754.8029    16481.205   -252.14479    113071.41   0.97059431 
+  140000    299.40815    6516.4108    16444.345    76.870826     113431.6   0.96751231 
+  145000    296.97353    5983.9009    15831.107   -214.98618    112865.88   0.97236178 
+  150000    298.48006    5174.2792     15071.44   -98.280445    113003.86   0.97117457 
+  155000    296.05495    7072.4216    16889.169    325.98202    113182.81   0.96963906 
+  160000    299.46057    4833.0214    14762.694   -392.62732    113240.09    0.9691486 
+  165000    297.42549    5356.9483    15219.141   -361.68438    112583.35   0.97480196 
+  170000     303.4303    5536.9957    15598.299   -65.411004    112375.57   0.97660431 
+  175000    298.35882    5975.2403    15868.381    607.58909    112863.36   0.97238348 
+  180000    294.17153    5366.6735    15120.969     141.5282    112894.33    0.9721168 
+  185000    297.86775    6212.5735     16089.43   -28.332967    112141.35    0.9786441 
+  190000    300.04064    6313.7271    16262.634    1110.7291    112932.72   0.97178631 
+  195000    299.50578    6898.6803    16829.852    -219.2032     113024.4   0.97099804 
+  200000    297.36761    4426.5743    14286.847   -289.90843    112930.46   0.97180573 
+  200018    296.64482    5579.0296    15415.336    22.309148    112685.88     0.973915 
+Loop time of 376.289 on 72 procs for 200000 steps with 11125 atoms
+
+Performance: 45.922 ns/day, 0.523 hours/ns, 531.506 timesteps/s
+190.9% CPU use with 36 MPI tasks x 2 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 185.03     | 199.94     | 217.56     |  61.0 | 53.14
+Bond    | 28.439     | 31.26      | 33.666     |  21.9 |  8.31
+Neigh   | 25.73      | 26.002     | 26.347     |   3.0 |  6.91
+Comm    | 72.87      | 91.33      | 106.4      |  98.1 | 24.27
+Output  | 0.0025024  | 0.0025505  | 0.0032009  |   0.2 |  0.00
+Modify  | 23.213     | 24.994     | 27.027     |  23.9 |  6.64
+Other   |            | 2.757      |            |       |  0.73
+
+Nlocal:    309.028 ave 336 max 286 min
+Histogram: 4 2 4 5 2 7 5 3 3 1
+Nghost:    5404.86 ave 5450 max 5336 min
+Histogram: 2 0 2 1 3 8 9 5 2 4
+Neighs:    109182 ave 119103 max 96498 min
+Histogram: 2 3 1 4 3 3 9 6 1 4
+
+Total # of neighbors = 3930565
+Ave neighs/atom = 353.309
+Ave special neighs/atom = 10.7416
+Neighbor list builds = 7449
+Dangerous builds = 0
+unfix NPT
+
+
+
+#fix NVT all nvt temp ${T} ${T} 5000
+
+write_data pec6_lopls.125
+Last active /omp style is improper_style harmonic/omp
+
+Total wall time: 0:06:16
