@@ -1,0 +1,25 @@
+import "pec6chain.lt"
+import "pec6core.lt"
+
+PEC6 inherits OPLSAA {
+
+  # The next line is optional
+  create_var {$mol}  # force all monomers to share the same molecule-ID
+
+  # Now create some monomers
+
+  core = new PEC6core
+  mon1 = new PEC6chain
+  mon2 = new PEC6chain.rot(109.5, 0.5,0,-0.866)
+  mon3 = new PEC6chain.rot(109.5, 0.5,0,0.866)
+  mon4 = new PEC6chain.rot(109.5, -1,0,0)
+  
+
+  # Now, link the monomers together this way:
+  write("Data Bond List") {
+    $bond:b1  $atom:core/C0  $atom:mon1/C_1
+    $bond:b2  $atom:core/C0  $atom:mon2/C_1
+    $bond:b3  $atom:core/C0  $atom:mon3/C_1
+    $bond:b4  $atom:core/C0  $atom:mon4/C_1
+  }
+}

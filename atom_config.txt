@@ -1,0 +1,9 @@
+"*":
+  core:
+    customFileTypes:
+      "source.lammps": [
+        "in"
+        "data"
+      ]
+  "exception-reporting":
+    userId: "289e8a32-8198-41c5-bc8d-68455b017b54"

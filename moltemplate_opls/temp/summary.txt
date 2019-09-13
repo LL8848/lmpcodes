@@ -1,0 +1,42 @@
+pair_coeff 1 1 0.066 3.5 # CT
+pair_coeff 2 2 0.015 2.42 # HC
+pair_coeff 3 3 0.066 3.5 # CT
+pair_coeff 4 4 0.066 3.5 # CT
+pair_coeff 5 5 0.066 3.5 # CT
+pair_coeff 6 6 0.03 2.5 # HC
+pair_coeff 7 7 0.026290630975 2.5 # HC
+pair_coeff 8 8 0.105 0.31875 # C
+pair_coeff 9 9 0.168 0.3108 # O
+pair_coeff 10 10 0.17 0.255 # OS
+bond_coeff 1 570.0 1.229 # C O
+bond_coeff 2 317.0 1.522 # C CT
+bond_coeff 3 214.0 1.327 # OS C
+bond_coeff 4 268.0 1.529 # CT CT
+bond_coeff 5 320.0 1.41 # CT OS
+bond_coeff 6 340.0 1.09 # CT HC
+angle_coeff 1 80.0 120.4 # CT C O
+angle_coeff 2 81.0 111.4 # OS C CT
+angle_coeff 3 83.0 123.4 # OS C O
+angle_coeff 4 58.35 112.7 # CT CT CT
+angle_coeff 5 63.0 111.1 # C CT CT
+angle_coeff 6 50.0 109.5 # CT CT OS
+angle_coeff 7 33.0 107.8 # HC CT HC
+angle_coeff 8 35.0 109.5 # C CT HC
+angle_coeff 9 35.0 109.5 # OS CT HC
+angle_coeff 10 37.5 110.7 # CT CT HC
+angle_coeff 11 83.0 116.9 # CT OS C
+dihedral_coeff 1 0.0 0.0 0.0 0.0 # CT CT C O
+dihedral_coeff 2 0.0 0.0 0.0 0.0 # O C CT HC
+dihedral_coeff 3 0.0 0.0 -0.13272 0.0 # OS C CT CT
+dihedral_coeff 4 0.0 0.0 0.03168 0.0 # OS C CT HC
+dihedral_coeff 5 0.0 1.22976 0.0 0.0 # CT OS C O
+dihedral_coeff 6 1.1205599999999998 1.22976 0.0 0.0 # CT OS C CT
+dihedral_coeff 7 -0.4944 -0.07511999999999999 0.0756 0.0 # C CT CT CT
+dihedral_coeff 8 0.0 0.0 -0.024 0.0 # C CT CT HC
+dihedral_coeff 9 0.0 0.0 0.072 0.0 # CT CT CT HC
+dihedral_coeff 10 0.0 0.0 0.072 0.0 # HC CT CT HC
+dihedral_coeff 11 -0.2928 -0.03024 0.10128 0.0 # CT CT OS C
+dihedral_coeff 12 0.0 0.0 0.04752 0.0 # C OS CT HC
+dihedral_coeff 13 0.312 -0.012 0.048 0.0 # CT CT CT OS
+dihedral_coeff 14 0.154726233264 -0.051442084128 0.042772657751999996 0.0 # CT CT CT CT
+improper_coeff {} {} {} # {} {} {} {}

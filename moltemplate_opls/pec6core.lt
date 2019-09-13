@@ -1,0 +1,9 @@
+import "oplsaa_ll.lt"
+
+PEC6core inherits OPLSAA {
+
+  write('Data Atoms') {
+    $atom:C0  $mol:... @atom:84  0.00 0.000   0.0000  0.000  #CT 84 "Alkane >C<"
+  }
+
+} # PEC6core

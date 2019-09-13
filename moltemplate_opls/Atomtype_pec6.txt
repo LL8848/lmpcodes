@@ -1,0 +1,12 @@
+Masses
+# type_number mass label id_in_loplsaa.lt comment
+1 12.011  # CT 84 @atom:84_b013_a013_d013_i013 "Alkane >C<"
+2 1.008  # HC 410 @atom:410_b046_a046_d046_i046 
+3 12.011  # CT 431 @atom:431_b013_a013_d013_i013
+4 12.011  # CT 80L @atom:80L_b013_a013_d013L_i013 "Alkane CH3-" 
+5 12.011  # CT 81L @atom:81L_b013_a013_d013L_i013 "Alkane -CH2-"
+6 1.008  # HC 85LCH3 @atom:85LCH3_b046_a046_d046_i046 "Alkane HC_CH3"
+7 1.008  # HC 85LCH2 @atom:85LCH2_b046_a046_d046_i046 "Alkane HC_CH2"
+8 12.011  # C_2 406L @atom:406L_b003_a003_d003L_i003 "Ester -COOR"
+9 15.999  # O_2 407L @atom:407L_b004_a004_d004L_i004 "Ester C=O"
+10 15.999  # OS 408L @atom:408L_b020_a020_d020L_i020 "Ester CO-O-R"

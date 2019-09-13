@@ -1,0 +1,30 @@
+;
+;	File 'topol.top' was generated
+;	By user: onbekend (0)
+;	On host: onbekend
+;	At date: Fri Jan  7 14:54:53 2011
+;
+;	This is a standalone topology file
+;
+;	It was generated using program:
+;	pdb2gmx - VERSION 4.5.3
+;
+;	Command line was:
+;	pdb2gmx -f new_single.pdb 
+;
+;	Force field was read from the standard Gromacs share directory.
+;
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+#include "gmo_glycerol_esterNBO2_charges.itp"
+#include "tip3p-mod.itp"
+
+[ system ]
+; Name
+
+
+[ molecules ]
+; Compound        #mols
+GMO              200 
+SOL		 490 

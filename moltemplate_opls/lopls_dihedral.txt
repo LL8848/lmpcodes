@@ -1,0 +1,20 @@
+# copied from the papers. Verified.
+Alcohols
+HC−CT−OH−HO 0.76205 2.37159 0.06090 −3.18897 methanol
+HC−CT−CT−OH 0.60436 1.64480 −0.13816 −2.23317 ethanol
+CT−CT−OH−HO −0.79464 3.75594 0.06712 −3.12293 propanol
+CT−CT−CT−OH 2.97554 1.25728 1.11423 −5.33767 propanol
+OH−CT−CT−OH 2.20116 −1.07501 3.55517 −6.07292 glycol
+Esters
+CT−C_2−OS−CT 32.59672 −6.52543 −24.00659 0.00000 methyl propanoate
+CT−OS−C_2−O_2 22.82916 0.00000 −24.00662 0.00000 methyl propanoate
+HC−CT−C_2−OS 0.17512 0.71721 −0.00911 −0.93557 methyl acetate
+C_2−OS−CT−CT −7.05897 7.54603 5.22349 −5.22077 ethyl acetate
+HC−CT−CT−OS 0.91475 2.67338 −0.09883 −3.59612 ethyl acetate
+CT−CT−C_2−OS −1.88531 −4.94762 2.62297 4.12830 methyl propanoate
+CT−CT−C_2−O_2 3.05944 −3.63216 −5.17499 5.61279 methyl propanoate
+C_2−CT−CT−HC −0.73096 −1.84830 −0.07261 2.47030 methyl propanoate
+C_2−CT−CT−CT −6.01526 8.73040 2.62473 −5.20449 methyl butanoate
+CT−CT−CT−OS 2.67162 1.59535 4.28477 −8.42744 propyl acetate
+OS−CT−CT−OS −4.66308 −1.45075 10.9913 −11.0859 ethylene glycol diacetate
+OH−CT−CT−OS 4.10370 −2.75689 9.94711 −10.3603 acetate glycol

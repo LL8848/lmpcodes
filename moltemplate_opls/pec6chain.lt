@@ -1,0 +1,58 @@
+import "oplsaa_ll.lt"
+import "loplsaa_ll.lt"
+
+PEC6chain inherits OPLSAA {
+  # atom-id  mol-id   atom-type  charge   x             y                z
+
+  write("Data Atoms") {
+    $atom:C_1 $mol:... @atom:431 0.000000 -3.685000 -1.472000 -0.001000  #CT 431 "Et Ester -OCH2R"
+    $atom:O_1 $mol:... @atom:408L 0.000000 -2.972000 -0.283000 -0.007000  #OS 408L "Ester CO-O-R"
+    $atom:C_2 $mol:... @atom:406L 0.000000 -3.790000 0.826000 -0.002000   #C 406L "Ester -COOR"
+    $atom:C_3 $mol:... @atom:81L  0.000000  -2.923000 2.066000 -0.009000  #CT 81 "Alkane -CH2-"
+    $atom:C_4 $mol:... @atom:81L  0.000000  -3.759000 3.345000 0.003000   #CT 81 "Alkane -CH2-"
+    $atom:C_5 $mol:... @atom:81L  0.000000  -2.872000 4.591000 -0.005000  #CT 81 "Alkane -CH2-"
+    $atom:C_6 $mol:... @atom:81L  0.000000  -3.711000 5.869000 0.011000   #CT 81 "Alkane -CH2-"
+    $atom:C_7 $mol:... @atom:80L  0.000000  -2.834000 7.111000 0.001000   #CT 81 "Alkane -CH2-"
+    $atom:O_2 $mol:... @atom:407L 0.000000 -5.014000 0.819000 0.005000    #O 407L  "Ester C=O"
+    $atom:H_1 $mol:... @atom:410 0.000000 -4.124000 -1.709000 -0.959000  #HC 410 "Ester -OCH<"
+    $atom:H_2 $mol:... @atom:410 0.000000 -4.130000 -1.697000 0.957000   #HC 410 "Ester -OCH<"
+    $atom:H_3 $mol:... @atom:85LCH2  0.000000  -2.298000 2.041000 -0.908000  #HC 85LCH2 "Alkane H-C"
+    $atom:H_4 $mol:... @atom:85LCH2  0.000000  -2.279000 2.037000 0.877000   #HC 85LCH2 "Alkane H-C"
+    $atom:H_5 $mol:... @atom:85LCH2  0.000000  -4.404000 3.356000 0.891000   #HC 85LCH2 "Alkane H-C"
+    $atom:H_6 $mol:... @atom:85LCH2  0.000000  -4.424000 3.360000 -0.870000  #HC 85LCH2 "Alkane H-C"
+    $atom:H_7 $mol:... @atom:85LCH2  0.000000  -2.233000 4.582000 -0.896000  #HC 85LCH2 "Alkane H-C"
+    $atom:H_8 $mol:... @atom:85LCH2  0.000000  -2.209000 4.576000 0.869000   #HC 85LCH2 "Alkane H-C"
+    $atom:H_9 $mol:... @atom:85LCH2  0.000000  -4.347000 5.886000 0.904000   #HC 85LCH2 "Alkane H-C"
+    $atom:H_10 $mol:... @atom:85LCH2 0.000000 -4.375000 5.890000 -0.861000   #HC 85LCH2 "Alkane H-C"
+    $atom:H_11 $mol:... @atom:85LCH3 0.000000 -2.179000 7.137000 0.878000    #HC 85LCH3 "Alkane H-C"
+    $atom:H_12 $mol:... @atom:85LCH3 0.000000 -3.455000 8.013000 0.014000    #HC 85LCH3 "Alkane H-C"
+    $atom:H_13 $mol:... @atom:85LCH3 0.000000 -2.209000 7.142000 -0.897000   #HC 85LCH3 "Alkane H-C"
+  }
+  write("Data Bond List") {
+    $bond:id1 $atom:C_1 $atom:O_1
+    $bond:id2 $atom:C_1 $atom:H_1
+    $bond:id3 $atom:C_1 $atom:H_2
+    $bond:id4 $atom:O_1 $atom:C_2
+    $bond:id5 $atom:C_2 $atom:C_3
+    $bond:id6 $atom:C_2 $atom:O_2
+    $bond:id7 $atom:C_3 $atom:C_4
+    $bond:id8 $atom:C_3 $atom:H_3
+    $bond:id9 $atom:C_3 $atom:H_4
+    $bond:id10 $atom:C_4 $atom:C_5
+    $bond:id11 $atom:C_4 $atom:H_5
+    $bond:id12 $atom:C_4 $atom:H_6
+    $bond:id13 $atom:C_5 $atom:C_6
+    $bond:id14 $atom:C_5 $atom:H_7
+    $bond:id15 $atom:C_5 $atom:H_8
+    $bond:id16 $atom:C_6 $atom:C_7
+    $bond:id17 $atom:C_6 $atom:H_9
+    $bond:id18 $atom:C_6 $atom:H_10
+    $bond:id19 $atom:C_7 $atom:H_11
+    $bond:id20 $atom:C_7 $atom:H_12
+    $bond:id21 $atom:C_7 $atom:H_13
+  }
+
+} # PEC6chain
+
+
+PEC6chain.move(3.685000,3,0.001)
