@@ -1,0 +1,23 @@
+Procedure to carry out a series of nemd simulations:
+
+-------- file preparation -----------
+
+1. create a folder for a temperature, say /343K
+
+2. copy the 'nemd_batch.sh' from exiting cases to here
+
+3. change the values of temperature and density in the file /343K/nemd_batch.sh
+
+4. copy the 'input' folder from exiting cases to that folder: cp xx/input xx/343K/input
+
+5. modify the node infomation in the file /343K/input/sb_nemd.sh
+
+6. add "0 0 0 xy xz yz" to the data file to make the box triclinic.
+
+-------- execution -----------
+
+change the values in the "shearList" in the /343K/nemd_batch.sh to set the shear rates to simulate
+
+1. run for 1 rate, check everything is all right
+
+2. run the rest 
