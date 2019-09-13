@@ -24,7 +24,7 @@ module load openmpi/4.0.1/intel2017
 
 # set environment for LAMMPS and msi2lmp executables
 # to find potential and force field files
-source /share/sw/lammps/5Jun19/etc/profile.d/lammps.sh     
+source /share/sw/lammps/5Jun19/etc/profile.d/lammps.sh
 
 echo "working directory = "$SLURM_SUBMIT_DIR
 echo "SLURM_SUBMIT_HOST = "$SLURM_SUBMIT_HOST
@@ -40,4 +40,4 @@ echo "SLURM_NTASKS"=$SLURM_NTASKS
 # set shear rate [1/fs]
 #export srate=2e-7
 
-mpirun -np $SLURM_NTASKS --mca btl '^openib' /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var rho $2 -var srate $3 -in in.pec6
+mpirun -np $SLURM_NTASKS --mca btl '^openib' /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var rho $2 -var srate $3 -in pec6.in
