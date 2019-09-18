@@ -47,5 +47,4 @@ unfix NPT
 
 #fix NVT all nvt temp ${T} ${T} 5000
 
-write_data pec6_lopls.125
-
+write_data pec6_lopls.rep
