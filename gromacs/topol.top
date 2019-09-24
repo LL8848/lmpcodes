@@ -1,0 +1,9 @@
+
+#include "pec6.itp"
+
+[system]
+My system
+
+[molecules]
+; name count
+PEC 125
