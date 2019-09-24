@@ -1,0 +1,14 @@
+  C_2   O_2     1    0.12290   476976.0   ;
+  C_2   CT      1    0.15220   265265.6   ;
+  C_2   OS      1    0.13270   179075.2   ; J.Comp.Chem.1990,11,1181 SKF8
+  CT    CT      1    0.15290   224262.4   ; CHARMM 22 parameter file
+  CT    OS      1    0.14100   267776.0   ; 
+  CT    HC      1    0.10900   284512.0   ; CHARMM 22 parameter file
+
+  CT     C_2    O_2     1   120.400    669.440   ; 
+  OS     C_2    CT      1   111.400    677.808   ; -idem-
+  O_2    C_2    OS      1   123.400    694.544   ; J.Comp.Chem.1990,11,1181 for SKF8
+  CT     CT     CT      1   112.700    488.273   ; CHARMM 22 parameter file
+  C_2    CT     CT      1   111.100    527.184   ; AA
+  CT     CT     OS      1   109.500    418.400   ; 
+  HC     CT     HC      1   107.800    276.144   ; CHARMM 22 parameter file
