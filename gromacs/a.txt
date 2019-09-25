@@ -1,0 +1,89 @@
+  1  opls_135   1  PEC   C1     1  -0.180   12.011000 ; [ CT]  alkane CH3
+  2  opls_140   1  PEC   H11    1  +0.060    1.008000 ; [ HC]  alkane H.
+  3  opls_140   1  PEC   H12    1  +0.060    1.008000 ; [ HC]  alkane H.
+  4  opls_140   1  PEC   H13    1  +0.060    1.008000 ; [ HC]  alkane H.
+  5  opls_136   1  PEC   C2     2  -0.120   12.011000 ; [ CT]  alkane CH2
+  6  opls_140   1  PEC   H21    2  +0.060    1.008000 ; [ HC]  alkane H.
+  7  opls_140   1  PEC   H22    2  +0.060    1.008000 ; [ HC]  alkane H.
+  8  opls_136   1  PEC   C3     3  -0.120   12.011000 ; [ CT]  alkane CH2
+  9  opls_140   1  PEC   H31    3  +0.060    1.008000 ; [ HC]  alkane H.
+ 10  opls_140   1  PEC   H32    3  +0.060    1.008000 ; [ HC]  alkane H.
+ 11  opls_136   1  PEC   C4     4  -0.120   12.011000 ; [ CT]  alkane CH2
+ 12  opls_140   1  PEC   H41    4  +0.060    1.008000 ; [ HC]  alkane H.
+ 13  opls_140   1  PEC   H42    4  +0.060    1.008000 ; [ HC]  alkane H.
+ 14  opls_136   1  PEC   C5     5  -0.120   12.011000 ; [ CT]  alkane CH2
+ 15  opls_140   1  PEC   H51    5  +0.060    1.008000 ; [ HC]  alkane H.
+ 16  opls_140   1  PEC   H52    5  +0.060    1.008000 ; [ HC]  alkane H.
+ 17  opls_465   1  PEC   C6     6  +0.510   12.011000 ; [C_2]  AA C:   esters - for R on C=O, use #280-#282
+ 18  opls_466   1  PEC   O7     6  -0.430   15.999400 ; [O_2]  AA =O:  esters
+ 19  opls_467   1  PEC   O8     6  -0.330   15.999400 ; [ OS]  AA -OR: ester
+ 20  opls_490   1  PEC   C9     7  +0.190   12.011000 ; [ CT]  C(H2OS) ethyl ester
+ 21  opls_469   1  PEC   H91    7  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 22  opls_469   1  PEC   H92    7  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 23  opls_139   1  PEC   C10    8  +0.000   12.011000 ; [ CT]  alkane C
+ 24  opls_490   1  PEC   C11    9  +0.190   12.011000 ; [ CT]  C(H2OS) ethyl ester
+ 25  opls_469   1  PEC   H111   9  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 26  opls_469   1  PEC   H112   9  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 27  opls_467   1  PEC   O12   10  -0.330   15.999400 ; [ OS]  AA -OR: ester
+ 28  opls_465   1  PEC   C13   10  +0.510   12.011000 ; [C_2]  AA C:   esters - for R on C=O, use #280-#282
+ 29  opls_466   1  PEC   O14   10  -0.430   15.999400 ; [O_2]  AA =O:  esters
+ 30  opls_136   1  PEC   C15   11  -0.120   12.011000 ; [ CT]  alkane CH2
+ 31  opls_140   1  PEC   H151  11  +0.060    1.008000 ; [ HC]  alkane H.
+ 32  opls_140   1  PEC   H152  11  +0.060    1.008000 ; [ HC]  alkane H.
+ 33  opls_136   1  PEC   C16   12  -0.120   12.011000 ; [ CT]  alkane CH2
+ 34  opls_140   1  PEC   H161  12  +0.060    1.008000 ; [ HC]  alkane H.
+ 35  opls_140   1  PEC   H162  12  +0.060    1.008000 ; [ HC]  alkane H.
+ 36  opls_136   1  PEC   C17   13  -0.120   12.011000 ; [ CT]  alkane CH2
+ 37  opls_140   1  PEC   H171  13  +0.060    1.008000 ; [ HC]  alkane H.
+ 38  opls_140   1  PEC   H172  13  +0.060    1.008000 ; [ HC]  alkane H.
+ 39  opls_136   1  PEC   C18   14  -0.120   12.011000 ; [ CT]  alkane CH2
+ 40  opls_140   1  PEC   H181  14  +0.060    1.008000 ; [ HC]  alkane H.
+ 41  opls_140   1  PEC   H182  14  +0.060    1.008000 ; [ HC]  alkane H.
+ 42  opls_135   1  PEC   C19   15  -0.180   12.011000 ; [ CT]  alkane CH3
+ 43  opls_140   1  PEC   H191  15  +0.060    1.008000 ; [ HC]  alkane H.
+ 44  opls_140   1  PEC   H192  15  +0.060    1.008000 ; [ HC]  alkane H.
+ 45  opls_140   1  PEC   H193  15  +0.060    1.008000 ; [ HC]  alkane H.
+ 46  opls_490   1  PEC   C20   16  +0.190   12.011000 ; [ CT]  C(H2OS) ethyl ester
+ 47  opls_469   1  PEC   H201  16  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 48  opls_469   1  PEC   H202  16  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 49  opls_467   1  PEC   O21   17  -0.330   15.999400 ; [ OS]  AA -OR: ester
+ 50  opls_465   1  PEC   C22   17  +0.510   12.011000 ; [C_2]  AA C:   esters - for R on C=O, use #280-#282
+ 51  opls_466   1  PEC   O23   17  -0.430   15.999400 ; [O_2]  AA =O:  esters
+ 52  opls_136   1  PEC   C24   18  -0.120   12.011000 ; [ CT]  alkane CH2
+ 53  opls_140   1  PEC   H241  18  +0.060    1.008000 ; [ HC]  alkane H.
+ 54  opls_140   1  PEC   H242  18  +0.060    1.008000 ; [ HC]  alkane H.
+ 55  opls_136   1  PEC   C25   19  -0.120   12.011000 ; [ CT]  alkane CH2
+ 56  opls_140   1  PEC   H251  19  +0.060    1.008000 ; [ HC]  alkane H.
+ 57  opls_140   1  PEC   H252  19  +0.060    1.008000 ; [ HC]  alkane H.
+ 58  opls_136   1  PEC   C26   20  -0.120   12.011000 ; [ CT]  alkane CH2
+ 59  opls_140   1  PEC   H261  20  +0.060    1.008000 ; [ HC]  alkane H.
+ 60  opls_140   1  PEC   H262  20  +0.060    1.008000 ; [ HC]  alkane H.
+ 61  opls_136   1  PEC   C27   21  -0.120   12.011000 ; [ CT]  alkane CH2
+ 62  opls_140   1  PEC   H271  21  +0.060    1.008000 ; [ HC]  alkane H.
+ 63  opls_140   1  PEC   H272  21  +0.060    1.008000 ; [ HC]  alkane H.
+ 64  opls_135   1  PEC   C28   22  -0.180   12.011000 ; [ CT]  alkane CH3
+ 65  opls_140   1  PEC   H281  22  +0.060    1.008000 ; [ HC]  alkane H.
+ 66  opls_140   1  PEC   H282  22  +0.060    1.008000 ; [ HC]  alkane H.
+ 67  opls_140   1  PEC   H283  22  +0.060    1.008000 ; [ HC]  alkane H.
+ 68  opls_490   1  PEC   C29   23  +0.190   12.011000 ; [ CT]  C(H2OS) ethyl ester
+ 69  opls_469   1  PEC   H291  23  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 70  opls_469   1  PEC   H292  23  +0.030    1.008000 ; [ HC]  methoxy Hs in esters
+ 71  opls_467   1  PEC   O30   24  -0.330   15.999400 ; [ OS]  AA -OR: ester
+ 72  opls_465   1  PEC   C31   24  +0.510   12.011000 ; [C_2]  AA C:   esters - for R on C=O, use #280-#282
+ 73  opls_466   1  PEC   O32   24  -0.430   15.999400 ; [O_2]  AA =O:  esters
+ 74  opls_136   1  PEC   C33   25  -0.120   12.011000 ; [ CT]  alkane CH2
+ 75  opls_140   1  PEC   H331  25  +0.060    1.008000 ; [ HC]  alkane H.
+ 76  opls_140   1  PEC   H332  25  +0.060    1.008000 ; [ HC]  alkane H.
+ 77  opls_136   1  PEC   C34   26  -0.120   12.011000 ; [ CT]  alkane CH2
+ 78  opls_140   1  PEC   H341  26  +0.060    1.008000 ; [ HC]  alkane H.
+ 79  opls_140   1  PEC   H342  26  +0.060    1.008000 ; [ HC]  alkane H.
+ 80  opls_136   1  PEC   C35   27  -0.120   12.011000 ; [ CT]  alkane CH2
+ 81  opls_140   1  PEC   H351  27  +0.060    1.008000 ; [ HC]  alkane H.
+ 82  opls_140   1  PEC   H352  27  +0.060    1.008000 ; [ HC]  alkane H.
+ 83  opls_136   1  PEC   C36   28  -0.120   12.011000 ; [ CT]  alkane CH2
+ 84  opls_140   1  PEC   H361  28  +0.060    1.008000 ; [ HC]  alkane H.
+ 85  opls_140   1  PEC   H362  28  +0.060    1.008000 ; [ HC]  alkane H.
+ 86  opls_135   1  PEC   C37   29  -0.180   12.011000 ; [ CT]  alkane CH3
+ 87  opls_140   1  PEC   H371  29  +0.060    1.008000 ; [ HC]  alkane H.
+ 88  opls_140   1  PEC   H372  29  +0.060    1.008000 ; [ HC]  alkane H.
+ 89  opls_140   1  PEC   H373  29  +0.060    1.008000 ; [ HC]  alkane H.
