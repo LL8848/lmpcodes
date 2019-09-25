@@ -16,7 +16,7 @@
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mail-user=lingnan.lin@nist.gov
 
-export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=1
 
 module purge
 module load intel/2017
@@ -40,4 +40,4 @@ echo "SLURM_NTASKS"=$SLURM_NTASKS
 # set shear rate [1/fs]
 #export srate=2e-7
 
-mpirun -np $SLURM_NTASKS --mca btl '^openib' /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var rho $2 -var srate $3 -in pec6.in
+mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var rho $2 -var srate $3 -in pec6.in

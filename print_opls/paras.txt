@@ -12,3 +12,7 @@
   C_2    CT     CT      1   111.100    527.184   ; AA
   CT     CT     OS      1   109.500    418.400   ; 
   HC     CT     HC      1   107.800    276.144   ; CHARMM 22 parameter file
+  C_2    CT     HC      1   109.500    292.880   ; 
+  HC     CT     OS      1   109.500    292.880   ; SUG
+  CT     CT     HC      1   110.700    313.800   ; CHARMM 22 parameter file
+  C_2    OS     CT      1   116.900    694.544   ; -idem-
