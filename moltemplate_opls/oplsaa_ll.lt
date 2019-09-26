@@ -9019,7 +9019,7 @@ OPLSAA {
     dihedral_style hybrid opls multi/harmonic
     improper_style harmonic
     pair_style lj/cut/coul/long/omp 12.0 12.0
-    pair_modify mix geometric
+    pair_modify tail yes mix geometric
     special_bonds lj/coul 0.0 0.0 0.5
     kspace_style pppm 0.00001
   } #end of init parameters

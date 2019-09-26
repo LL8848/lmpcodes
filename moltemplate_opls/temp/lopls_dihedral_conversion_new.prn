@@ -1,0 +1,22 @@
+# unit: kcal/mol
+dihedral_coeff    @dihedral:013L_013L_013L_013L         multi/harmonic      0.12399 -0.05502   0.21434 -0.35644 0.00000
+dihedral_coeff    @dihedral:X_047L_047L_X               multi/harmonic     12.25026  0.00000 -12.25026  0.00000 0.00000
+dihedral_coeff    @dihedral:047L_047L_013L_013L         multi/harmonic     -0.48974  0.24759  -0.32189  0.20655 0.00000
+dihedral_coeff    @dihedral:013L_013L_013L_047L         multi/harmonic      0.90491  0.02552  -0.13437 -0.35549 0.00000
+dihedral_coeff    @dihedral:046L_013LL_005L_007L        multi/harmonic      0.18213  0.56682   0.01456 -0.76218 0.00000
+dihedral_coeff    @dihedral:046L_013LL_013LL_005L       multi/harmonic      0.14445  0.39312  -0.03302 -0.53374 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_005L_007L       multi/harmonic     -0.18992  0.89769   0.01604 -0.74640 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_013LL_005L      multi/harmonic      0.71117  0.30050   0.26631 -1.27573 0.00000
+dihedral_coeff    @dihedral:005L_013LL_013LL_005L       multi/harmonic      0.52609 -0.25693   0.84971 -1.45146 0.00000
+dihedral_coeff    @dihedral:013LL_003L_020L_013LL       multi/harmonic      7.79080 -1.55962  -5.73771  0.00000 0.00000
+dihedral_coeff    @dihedral:013LL_020L_003L_004L        multi/harmonic      5.45630  0.00000  -5.73772  0.00000 0.00000
+dihedral_coeff    @dihedral:046L_013LL_003L_020L        multi/harmonic      0.04185  0.17142  -0.00218 -0.22361 0.00000
+dihedral_coeff    @dihedral:003L_020L_013LL_013LL       multi/harmonic     -1.68713  1.80354   1.24844 -1.24779 0.00000
+dihedral_coeff    @dihedral:046L_013LL_013LL_020L       multi/harmonic      0.21863  0.63895  -0.02362 -0.85949 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_003L_020L       multi/harmonic     -0.45060 -1.18251   0.62690  0.98669 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_003L_004L       multi/harmonic      0.73122 -0.86811  -1.23685  1.34149 0.00000
+dihedral_coeff    @dihedral:003L_013LL_013LL_046L       multi/harmonic     -0.17470 -0.44175  -0.01735  0.59042 0.00000
+dihedral_coeff    @dihedral:003L_013LL_013LL_013LL      multi/harmonic     -1.43768  2.08662   0.62733 -1.24390 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_013LL_020L      multi/harmonic      0.63853  0.38130   1.02408 -2.01421 0.00000
+dihedral_coeff    @dihedral:020L_013LL_013LL_020L       multi/harmonic     -1.11450 -0.34674   2.62698 -2.64959 0.00000
+dihedral_coeff    @dihedral:005L_013LL_013LL_020L       multi/harmonic      0.98081 -0.65891   2.37742 -2.47617 0.00000

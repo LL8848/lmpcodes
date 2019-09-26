@@ -208,35 +208,37 @@ OPLSAA {
   # Syntax:
   # dihedral_coeff DihedralTypeName  parameters...
 
-  # revised by Lingnan Lin on 9/9/2019
+  # revised by Lingnan Lin on 9/26/2019
   # the previous conversion loplsaa parameters from the form of RB to Fourier is problematic
   # because the there should be a constant term in the Fourier function
   # where as the Fourier function, opls in LAMMPS, doesn't have a constant tinkerparm2lt
   # therefore, the dihedral form used here is multi/harmonic (the same as RB form)
   # accordingly, the dihedral_style is changed to "dihedral_style hybrid opls multi/harmonic"
+  # the values are extracted from the original papers and converted units from kJ/mol to kcal/mol
+  # 1 kcal/mol = 4.184 kJ/mol
 
   write_once("In Settings") {
-    dihedral_coeff    @dihedral:013L_013L_013L_013L         multi/harmonic      0.12451 -0.05525   0.21523 -0.35792 0.00000  #   CT-CT-CT-CT
-    dihedral_coeff    @dihedral:X_047L_047L_X               multi/harmonic     12.30122  0.00000 -12.30122  0.00000 0.00000  #   X-CM-CM-X
-    dihedral_coeff    @dihedral:047L_047L_013L_013L         multi/harmonic     -0.49177  0.24862  -0.32323  0.20741 0.00000  #   CM-CM-CT-CT
-    dihedral_coeff    @dihedral:013L_013L_013L_047L         multi/harmonic      0.90867  0.02563  -0.13493 -0.35697 0.00000  #   CM-CT-CT-CT
-    dihedral_coeff    @dihedral:046L_013LL_005L_007L        multi/harmonic      0.18289  0.56918   0.01462 -0.76535 0.00000  #   HC-CT-OH-HO
-    dihedral_coeff    @dihedral:046L_013LL_013LL_005L       multi/harmonic      0.14505  0.39475  -0.03316 -0.53596 0.00000  #   HC-CT-CT-OH
-    dihedral_coeff    @dihedral:013LL_013LL_005L_007L       multi/harmonic     -0.19071  0.90143   0.01611 -0.74950 0.00000  #   CT-CT-OH-HO
-    dihedral_coeff    @dihedral:013LL_013LL_013LL_005L      multi/harmonic      0.71413  0.30175   0.26742 -1.28104 0.00000  #   CT-CT-CT-OH
-    dihedral_coeff    @dihedral:005L_013LL_013LL_005L       multi/harmonic      0.52828 -0.25800   0.85324 -1.45750 0.00000  #   OH-CT-CT-OH
-    dihedral_coeff    @dihedral:013LL_003L_020L_013LL       multi/harmonic      7.82321 -1.56610  -5.76158  0.00000 0.00000  #   CT-C_2-OS-CT
-    dihedral_coeff    @dihedral:013LL_020L_003L_004L        multi/harmonic      5.47900  0.00000  -5.76159  0.00000 0.00000  #   CT-OS-C_2-O_2
-    dihedral_coeff    @dihedral:046L_013LL_003L_020L        multi/harmonic      0.04203  0.17213  -0.00219 -0.22454 0.00000  #   HC-CT-C_2-OS
-    dihedral_coeff    @dihedral:003L_020L_013LL_013LL       multi/harmonic     -1.69415  1.81105   1.25364 -1.25298 0.00000  #   C_2-OS-CT-CT
-    dihedral_coeff    @dihedral:046L_013LL_013LL_020L       multi/harmonic      0.21954  0.64161  -0.02372 -0.86307 0.00000  #   HC-CT-CT-OS
-    dihedral_coeff    @dihedral:013LL_013LL_003L_020L       multi/harmonic     -0.45247 -1.18743   0.62951  0.99079 0.00000  #   CT-CT-C_2-OS
-    dihedral_coeff    @dihedral:013LL_013LL_003L_004L       multi/harmonic      0.73427 -0.87172  -1.24200  1.34707 0.00000  #   CT-CT-C_2-O_2
-    dihedral_coeff    @dihedral:003L_013LL_013LL_046L       multi/harmonic     -0.17543 -0.44359  -0.01743  0.59287 0.00000  #   C_2-CT-CT-HC
-    dihedral_coeff    @dihedral:003L_013LL_013LL_013LL      multi/harmonic     -1.44366  2.09530   0.62994 -1.24908 0.00000  #   C_2-CT-CT-CT
-    dihedral_coeff    @dihedral:013LL_013LL_013LL_020L      multi/harmonic      0.64119  0.38288   1.02834 -2.02259 0.00000  #   CT-CT-CT-OS
-    dihedral_coeff    @dihedral:020L_013LL_013LL_020L       multi/harmonic     -1.11914 -0.34818   2.63791 -2.66062 0.00000  #   OS-CT-CT-OS
-    dihedral_coeff    @dihedral:005L_013LL_013LL_020L       multi/harmonic      0.98489 -0.66165   2.38731 -2.48647 0.00000  #   OH-CT-CT-OS
+dihedral_coeff    @dihedral:013L_013L_013L_013L         multi/harmonic      0.12399 -0.05502   0.21434 -0.35644 0.00000
+dihedral_coeff    @dihedral:X_047L_047L_X               multi/harmonic     12.25026  0.00000 -12.25026  0.00000 0.00000
+dihedral_coeff    @dihedral:047L_047L_013L_013L         multi/harmonic     -0.48974  0.24759  -0.32189  0.20655 0.00000
+dihedral_coeff    @dihedral:013L_013L_013L_047L         multi/harmonic      0.90491  0.02552  -0.13437 -0.35549 0.00000
+dihedral_coeff    @dihedral:046L_013LL_005L_007L        multi/harmonic      0.18213  0.56682   0.01456 -0.76218 0.00000
+dihedral_coeff    @dihedral:046L_013LL_013LL_005L       multi/harmonic      0.14445  0.39312  -0.03302 -0.53374 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_005L_007L       multi/harmonic     -0.18992  0.89769   0.01604 -0.74640 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_013LL_005L      multi/harmonic      0.71117  0.30050   0.26631 -1.27573 0.00000
+dihedral_coeff    @dihedral:005L_013LL_013LL_005L       multi/harmonic      0.52609 -0.25693   0.84971 -1.45146 0.00000
+dihedral_coeff    @dihedral:013LL_003L_020L_013LL       multi/harmonic      7.79080 -1.55962  -5.73771  0.00000 0.00000
+dihedral_coeff    @dihedral:013LL_020L_003L_004L        multi/harmonic      5.45630  0.00000  -5.73772  0.00000 0.00000
+dihedral_coeff    @dihedral:046L_013LL_003L_020L        multi/harmonic      0.04185  0.17142  -0.00218 -0.22361 0.00000
+dihedral_coeff    @dihedral:003L_020L_013LL_013LL       multi/harmonic     -1.68713  1.80354   1.24844 -1.24779 0.00000
+dihedral_coeff    @dihedral:046L_013LL_013LL_020L       multi/harmonic      0.21863  0.63895  -0.02362 -0.85949 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_003L_020L       multi/harmonic     -0.45060 -1.18251   0.62690  0.98669 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_003L_004L       multi/harmonic      0.73122 -0.86811  -1.23685  1.34149 0.00000
+dihedral_coeff    @dihedral:003L_013LL_013LL_046L       multi/harmonic     -0.17470 -0.44175  -0.01735  0.59042 0.00000
+dihedral_coeff    @dihedral:003L_013LL_013LL_013LL      multi/harmonic     -1.43768  2.08662   0.62733 -1.24390 0.00000
+dihedral_coeff    @dihedral:013LL_013LL_013LL_020L      multi/harmonic      0.63853  0.38130   1.02408 -2.01421 0.00000
+dihedral_coeff    @dihedral:020L_013LL_013LL_020L       multi/harmonic     -1.11450 -0.34674   2.62698 -2.64959 0.00000
+dihedral_coeff    @dihedral:005L_013LL_013LL_020L       multi/harmonic      0.98081 -0.65891   2.37742 -2.47617 0.00000
   } #(end of dihedral_coeffs)
 
   # Rules for creating dihedral interactions according to atom type:
