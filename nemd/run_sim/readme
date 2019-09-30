@@ -4,7 +4,7 @@ Procedure to carry out a series of nemd simulations:
 
 1. create a folder for a temperature, say /343K
 
-2. copy the 'nemd_batch.sh' from exiting cases to here
+2. copy the 'nemd_batch.sh' from existing cases to here
 
 3. change the values of temperature and density in the file /343K/nemd_batch.sh
 

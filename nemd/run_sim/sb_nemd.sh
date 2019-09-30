@@ -5,11 +5,11 @@
 ##SBATCH --constraint=broadwell
 ##SBATCH --ntasks-per-node=36
 
-#SBATCH --constraint=rack-Z12,broadwell
-#SBATCH --ntasks-per-node=36
+##SBATCH --constraint=rack-Z12,broadwell
+##SBATCH --ntasks-per-node=36
 
-##SBATCH --constraint=skylake
-##SBATCH --ntasks-per-node=24
+#SBATCH -p ref_flam
+#SBATCH --ntasks-per-node=24
 
 #SBATCH -t 30-00:00
 #SBATCH -J nemd
