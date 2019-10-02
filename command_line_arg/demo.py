@@ -1,5 +1,7 @@
 #!/anaconda3/bin/python
 
+# This is a template script that parses bash command line options
+
 __author__ = 'Lingnan Lin'
 
 import sys,getopt
