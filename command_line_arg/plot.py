@@ -5,7 +5,7 @@ import sys,getopt
 
 def usage():
     # print a guide on how to use this script
-    print('Usage: '+sys.argv[0]+' -i <filename>')
+    print("Usage: python plot.py -i <filename>")
 
 
 def plot_out(filename):
