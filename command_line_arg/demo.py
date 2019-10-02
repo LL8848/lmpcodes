@@ -1,8 +1,12 @@
 #!/anaconda3/bin/python
+
+__author__ = 'Lingnan Lin'
+
 import sys,getopt
 
+
 def usage():
-    # print a guide on how to use this code
+    # print a guide on how to use this script
     print('Usage: '+sys.argv[0]+' -i <file1> [option]')
 
 
@@ -20,6 +24,7 @@ def main():
         sys.exit(2)
 
     # variables to be operated
+    # genneraly, the variable is a file name or a flag.
     input = None
     output = None
     verbose = False
