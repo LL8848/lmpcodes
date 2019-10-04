@@ -5,11 +5,11 @@
 ##SBATCH --constraint=broadwell
 ##SBATCH --ntasks-per-node=36
 
-#SBATCH --constraint=rack-Z12,broadwell
-#SBATCH --ntasks-per-node=36
+##SBATCH --constraint=rack-Z12,broadwell
+##SBATCH --ntasks-per-node=36
 
-##SBATCH -p ref_flam
-##SBATCH --ntasks-per-node=24
+#SBATCH -p ref_flam
+#SBATCH --ntasks-per-node=24
 
 #SBATCH -t 30-00:00
 #SBATCH -J nemd
@@ -40,4 +40,4 @@ echo "SLURM_NTASKS"=$SLURM_NTASKS
 # set shear rate [1/fs]
 #export srate=2e-7
 
-mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var srate $2 -var ff $3 -in nemd.in
+mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var rho $2 -var srate $3 -in pec6.in

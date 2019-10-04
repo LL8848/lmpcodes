@@ -5,16 +5,17 @@
 ##SBATCH --constraint=broadwell
 ##SBATCH --ntasks-per-node=36
 
-#SBATCH --constraint=rack-Z12,broadwell
-#SBATCH --ntasks-per-node=36
+##SBATCH --constraint=rack-Z12,broadwell
+##SBATCH --ntasks-per-node=36
 
-##SBATCH -p ref_flam
-##SBATCH --ntasks-per-node=24
+#SBATCH -p ref_flam
+#SBATCH --ntasks-per-node=24
 
 #SBATCH -t 30-00:00
-#SBATCH -J nemd
+#SBATCH -J anneal
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mail-user=lingnan.lin@nist.gov
+
 
 export OMP_NUM_THREADS=1
 
@@ -33,11 +34,4 @@ echo "SLURM_JOB_NODELIST"=$SLURM_JOB_NODELIST
 echo "SLURM_NNODES"=$SLURM_NNODES
 echo "SLURM_NTASKS"=$SLURM_NTASKS
 
-# set temperature [K]
-#export T=313
-# set density [g/cm3]
-#export rho=0.9
-# set shear rate [1/fs]
-#export srate=2e-7
-
-mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var srate $2 -var ff $3 -in nemd.in
+mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -sf omp -var ff $1 -var T0 $2 -in anneal.in
