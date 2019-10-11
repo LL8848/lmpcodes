@@ -27,7 +27,7 @@ include    pec6.${ff}.settings
 
 
 change_box all triclinic
-kspace_style pppm 0.00001 # must redefine pppm after changing to triclinic
+kspace_style pppm 0.0001 # must redefine pppm after changing to triclinic
 
 
 timestep ${DT}
@@ -57,9 +57,9 @@ variable        h5 equal c_tiltp[5]  # pxz
 variable        h6 equal c_tiltp[6]  # pyz
 variable	visc equal 101325e-12*v_stress/(v_srate) # shear viscosity [mPa s]; first term is unit converter
 
-fix		viscave all ave/time 10 1000 10000 v_visc ave running start 10000 file ${fname}
+fix		viscave all ave/time 100 1000 100000 v_visc ave running start 10000 file ${fname}
 
-thermo 10000
+thermo 100000
 thermo_style	custom step temp press pxy v_visc f_viscave
 thermo_modify	temp tilt
 thermo_modify   press tiltp
