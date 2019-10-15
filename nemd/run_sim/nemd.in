@@ -57,7 +57,7 @@ variable        h5 equal c_tiltp[5]  # pxz
 variable        h6 equal c_tiltp[6]  # pyz
 variable	visc equal 101325e-12*v_stress/(v_srate) # shear viscosity [mPa s]; first term is unit converter
 
-fix		viscave all ave/time 100 1000 100000 v_visc ave running start 10000 file ${fname}
+fix		viscave all ave/time 100 1000 100000 v_visc ave one start 10000 file ${fname}
 
 thermo 100000
 thermo_style	custom step temp press pxy v_visc f_viscave
