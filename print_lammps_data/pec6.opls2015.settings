@@ -1,0 +1,50 @@
+  pair_coeff 1 1 0.066 3.5
+  pair_coeff 2 2 0.066 3.5
+  pair_coeff 3 3 0.066 3.5
+  pair_coeff 4 4 0.03 2.5
+  pair_coeff 5 5 0.105 3.75
+  pair_coeff 6 6 0.21 2.96
+  pair_coeff 7 7 0.17 3.0
+  pair_coeff 8 8 0.015 2.42
+  pair_coeff 9 9 0.066 3.5
+  bond_coeff 1 570.0 1.229
+  bond_coeff 2 317.0 1.522
+  bond_coeff 3 214.0 1.327
+  bond_coeff 4 268.0 1.529
+  bond_coeff 5 320.0 1.41
+  bond_coeff 6 340.0 1.09
+  angle_coeff 1 80.0 120.4
+  angle_coeff 2 81.0 111.4
+  angle_coeff 3 83.0 123.4
+  angle_coeff 4 58.35 112.7
+  angle_coeff 5 63.0 111.1
+  angle_coeff 6 50.0 109.5
+  angle_coeff 7 33.0 107.8
+  angle_coeff 8 35.0 109.5
+  angle_coeff 9 35.0 109.5
+  angle_coeff 10 37.5 110.7
+  angle_coeff 11 83.0 116.9
+dihedral_coeff 1 -0.27700 1.22800 -0.69400 0.00000
+dihedral_coeff 2 -0.00000 -0.00000 -0.00000 0.00000
+dihedral_coeff 3 0.00000 -0.00000 -0.55300 0.00000
+dihedral_coeff 4 -0.00000 -0.00000 0.13200 0.00000
+dihedral_coeff 5 -0.00000 5.12400 -0.00000 0.00000
+dihedral_coeff 6 4.66900 5.12400 -0.00000 0.00000
+dihedral_coeff 7 -1.69700 -0.45600 0.58500 0.00000
+dihedral_coeff 8 0.00001 -0.00000 -0.07600 0.00000
+dihedral_coeff 9 1.30000 -0.05000 0.20000 0.00000
+dihedral_coeff 10 -0.00000 -0.00000 0.30000 0.00000
+dihedral_coeff 11 -0.00000 -0.00000 0.30000 0.00000
+dihedral_coeff 12 -1.22000 -0.12600 0.42200 0.00000
+dihedral_coeff 13 -0.00000 -0.00000 0.19800 0.00000
+dihedral_coeff 14 1.71100 -0.50000 0.66300 0.00000
+  improper_coeff 1 10.5 180.0
+  set type 1 charge -0.18
+  set type 2 charge -0.12
+  set type 3 charge 0.0
+  set type 4 charge 0.06
+  set type 5 charge 0.51
+  set type 6 charge -0.43
+  set type 7 charge -0.33
+  set type 8 charge 0.03
+  set type 9 charge 0.19
