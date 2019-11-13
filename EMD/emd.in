@@ -1,0 +1,62 @@
+# Viscosity calculation by Green-Kubo method
+# Use 'real' unit system (energy:Kcal/mole; distance:A; time:fs)
+atom_style full
+units real
+
+# Define parameters
+variable T equal 373 # Temeperature [k]
+variable DT equal 0.5 # time step [fs]
+
+variable randomseed equal round(random(1,1000000000,${seed}))
+
+read_restart    pec6_125.equi373K
+
+# initialization
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+pair_style lj/cut/coul/long/omp 12.0 12.0
+pair_modify tail yes mix geometric
+special_bonds lj/coul 0.0 0.0 0.5
+kspace_style   pppm 0.0001
+
+# force field parameters, ff is passed by command line
+include    pec6.lopls2015.settings
+
+# reassign the velociy by temperature
+velocity   all create $T ${randomseed} mom yes rot yes dist gaussian
+print "------------------------------------------------------------"
+print "Random seed is ${seed} -> ${randomseed} (for assignning velocity)"
+print "------------------------------------------------------------"
+
+timestep  ${DT}
+reset_timestep	0
+# run_style respa/omp 2 4
+
+thermo_style one
+thermo 10000
+
+fix NVT all nvt/omp temp ${T} ${T} $(100*dt)
+
+# calculate stress tensor at each direction
+variable     pxy equal pxy
+variable     pxz equal pxz
+variable     pyz equal pyz
+variable     pxx equal pxx-press
+variable     pyy equal pyy-press
+variable     pzz equal pzz-press
+
+# calculate stress Auto-Correlation-Function (ACF) <p(0)p(t)>
+variable Ns equal 10 # Sample interval
+variable Nc equal 400e3 # Correlation length (maximal correlation time: Ns*Nc*DT)
+variable Np equal 50e6 # dump interval (calculate averages every this many timesteps)
+fix ACF all ave/correlate ${Ns} ${Nc} ${Np} v_pxy v_pxz v_pyz v_pxx v_pyy v_pzz type auto file acf.txt
+
+variable M equal 1 # Number of calculated autocorrelation functions
+variable N equal ${M}*${Np} # Production steps
+
+restart 1000000 ${T}K.restart.A ${T}K.restart.B
+# Run the prodution
+run ${N}
+write_restart restart.pec6
