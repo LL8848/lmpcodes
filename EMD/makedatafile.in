@@ -1,0 +1,21 @@
+# Viscosity calculation by Green-Kubo method
+# Use 'real' unit system (energy:Kcal/mole; distance:A; time:fs)
+atom_style full
+units real
+
+read_restart    pec6_125.equi373K
+# initialization
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+pair_style lj/cut/coul/long/omp 12.0 12.0
+pair_modify tail yes mix geometric
+special_bonds lj/coul 0.0 0.0 0.5
+kspace_style pppm 0.0001
+# force field parameters, ff is passed by command line
+include    pec6.lopls2015.settings
+
+
+run 0
+write_data pec6_125.equi373K.data nocoeff
