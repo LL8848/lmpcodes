@@ -1,0 +1,108 @@
+
+atom_style full
+units real
+
+# Define parameters
+# T and srate are passed by command line
+#variable	srate equal 2e-7 # shear rate [1/fs]
+variable    DT equal 0.5 # time step [fs]
+variable    fname string visc_PEC5_${T}K_${P}MPa_${srate0}.txt
+variable    srate equal ${srate0}/1e15  # convert shear rate unit from s^-1 to fs^-1
+variable    pressure equal press
+variable    density equal density
+
+
+print "------------------------------------------------------------"
+print "NEMD simulation for ${T} K, ${P} MPa"
+print "Strain rate: ${srate0} s^-1 or ${srate} fs^-1"
+print "------------------------------------------------------------"
+
+# read restart file from previous equilibrium run
+read_restart    pec5_125.equi${T}K
+neigh_modify	delay 0 every 1
+
+# initialization
+bond_style harmonic/omp
+angle_style harmonic/omp
+dihedral_style opls/omp
+improper_style harmonic/omp
+pair_style lj/cut/coul/long/omp 14.0 14.0
+pair_modify tail yes mix geometric
+special_bonds lj/coul 0.0 0.0 0.5
+
+# force field parameters, ff is passed by command line
+include    pec5.lopls2015.settings
+
+
+change_box all triclinic
+kspace_style pppm 0.00001 # must redefine pppm after changing to triclinic
+
+
+timestep ${DT}
+reset_timestep	0
+variable	dummytime equal step*dt/1e6  # unit: ns
+#run_style respa 2 4
+
+
+# CORE part of NEMD simulation; using SLLOD algorithm.
+
+fix		nemd1 all nvt/sllod temp $T $T $(100*dt)
+fix		nemd2 all deform 1 xy erate ${srate} remap v
+
+compute		usualT all temp
+compute		tilt  all temp/deform # calculate temperautre by subtracting out a streaming velocity induced by deformation
+compute     tiltp all pressure tilt
+
+
+
+# data gathering
+variable	baserate equal 0
+variable	firsthlrate equal 0
+variable	basefinalN equal 0
+variable	firsthlfinalN equal 0
+variable 	initialstrain equal ${baserate}*dt*${basefinalN}+${firsthlrate}*dt*(${firsthlfinalN}-${basefinalN})
+variable    strain equal ${initialstrain}+${srate}*dt*(step-${firsthlfinalN})
+
+compute         myP all pressure NULL virial   # calculate pressure without subtracting deformation
+
+
+variable        stress equal (-1)*c_tiltp[4]  # -pxy
+variable        h1 equal c_tiltp[1]  # pxx
+variable        h2 equal c_tiltp[2]  # pyy
+variable        h3 equal c_tiltp[3]  # pzz
+variable        h4 equal c_tiltp[4]  # pxy
+variable        h5 equal c_tiltp[5]  # pxz
+variable        h6 equal c_tiltp[6]  # pyz
+variable	   visc equal 101325e-12*v_stress/(v_srate) # shear viscosity [mPa s]; first term is unit converter
+
+fix		viscave all ave/time 100 1000 100000 v_visc ave one file ${fname}
+fix     pave all ave/time 100 1000 100000 v_pressure ave one file pressure.out
+fix     ssave all ave/time 100 1000 100000 v_stress ave one file strainstress.out
+fix     pressave all ave/time 100 1000 100000 v_h1 v_h2 v_h3 v_h4 v_h5 v_h6 ave one file Ptensor.out
+fix     virialave all ave/time 100 1000 100000 c_myP[1] c_myP[2] c_myP[3] c_myP[4] c_myP[5] c_myP[6] ave one file virial.out
+fix     ktensorave all ave/time 100 1000 100000 c_tilt[1] c_tilt[2] c_tilt[3] c_tilt[4] c_tilt[5] c_tilt[6] ave one file ktensor.out # kinetic energy tensor
+
+#compute         layers all chunk/atom bin/1d y center 0.05 units reduced
+#fix		vpave all ave/chunk 1000 50000 50000000 layers vx file velocityProfile.txt
+
+# get thermodynamic information
+thermo         	100000
+thermo_style    custom step v_dummytime v_strain temp press vol density pe etotal f_pave c_usualT
+thermo_modify	temp tilt
+thermo_modify   press tiltp
+
+
+# only need to run for 5400 steps to make a good 100-frame movie
+# set 54K steps above in equil and 5400 here simply to make good movie
+# 54K and 5400 are multiples of box-swap periodicity = 2700 steps
+
+#dump myDump all atom 10000 pec6.lammpstrj
+
+#dump	        1 all custom 50 dump.nemd.2d id type x y z vx
+
+#dump		2 all image 50 image.*.jpg vx type zoom 1.2 adiam 1.2
+#dump_modify	2 pad 5 amap 0.0 ${srate} ca 0.0 2 min blue max red
+
+restart 1000000 ${T}K.restart.A ${T}K.restart.B
+run		100000000
+write_restart restart.pec5

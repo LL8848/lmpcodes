@@ -2,21 +2,21 @@
 
 #SBATCH --nodes=1
 
-##SBATCH --constraint=broadwell
-##SBATCH --ntasks-per-node=36
+#SBATCH --constraint=broadwell
+#SBATCH --ntasks-per-node=36
 
 ##SBATCH --constraint=rack-Z12,broadwell
 ##SBATCH --ntasks-per-node=36
 
-#SBATCH -p ref_flam
-#SBATCH --ntasks-per-node=24
+##SBATCH -p ref_flam
+##SBATCH --ntasks-per-node=24
 
 #SBATCH -t 30-00:00
-#SBATCH -J r.nemd
+#SBATCH -J opls373
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mail-user=lingnan.lin@nist.gov
 
-export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=1
 
 module purge
 module load intel/2017

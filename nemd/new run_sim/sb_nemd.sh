@@ -12,7 +12,7 @@
 #SBATCH --ntasks-per-node=24
 
 #SBATCH -t 30-00:00
-#SBATCH -J r.nemd
+#SBATCH -J nemd
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mail-user=lingnan.lin@nist.gov
 
@@ -40,4 +40,4 @@ echo "SLURM_NTASKS"=$SLURM_NTASKS
 # set shear rate [1/fs]
 #export srate=2e-7
 
-mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var srate $2 -var ff $3 -var res $4 -in r.nemd.in
+mpirun -np $SLURM_NTASKS --mca btl tcp,vader,self /share/sw/lammps/5Jun19/bin/lmp -pk omp $OMP_NUM_THREADS -var T $1 -var srate0 $2 -var P $3 -in nemd.in

@@ -8,30 +8,31 @@ variable DT equal 0.5 # time step [fs]
 #variable	srate equal 2e-7 # shear rate [1/fs]
 variable fname string ${T}K-srate=${srate}.txt
 
-# read restart file from previous equilibrium run
+# read restart file for the previous simulation
+# variable 'res' is passed by the command line
 read_restart    ${res}
 neigh_modify	delay 0 every 1
 
 
 # initialization
-bond_style harmonic/omp
-angle_style harmonic/omp
-dihedral_style opls/omp
-improper_style harmonic/omp
-pair_style lj/cut/coul/long/omp 14.0 14.0
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+pair_style lj/cut/coul/long/omp 12.0 12.0
 pair_modify tail yes mix geometric
 special_bonds lj/coul 0.0 0.0 0.5
 
 # force field parameters, ff is passed by command line
-include    pec5.${ff}.settings
+include    pec6.${ff}.settings
 
 
 change_box all triclinic
-kspace_style pppm 0.00001 # must redefine pppm after changing to triclinic
+kspace_style pppm 0.0001 # must redefine pppm after changing to triclinic
 
 
 timestep ${DT}
-#reset_timestep	0
+# reset_timestep	0
 #run_style respa 2 4
 
 
@@ -48,7 +49,6 @@ compute     tiltp all pressure tilt
 #fix		4 all ave/chunk 100 250 25000 layers vx file velocity.txt
 
 # data gathering
-variable    pressure equal press
 variable        stress equal (-1)*c_tiltp[4]  # -pxy
 variable        h1 equal c_tiltp[1]  # pxx
 variable        h2 equal c_tiltp[2]  # pyy
@@ -58,8 +58,7 @@ variable        h5 equal c_tiltp[5]  # pxz
 variable        h6 equal c_tiltp[6]  # pyz
 variable	visc equal 101325e-12*v_stress/(v_srate) # shear viscosity [mPa s]; first term is unit converter
 
-fix		viscave all ave/time 100 1000 100000 v_visc ave one start 10000 file ${fname}
-fix		pave all ave/time 100 1000 100000 v_pressure ave one start 10000 file pave.txt
+fix		viscave all ave/time 100 1000 100000 v_visc ave one file ${fname}
 
 thermo 100000
 thermo_style	custom step temp press pxy v_visc f_viscave
@@ -78,5 +77,6 @@ thermo_modify   press tiltp
 #dump_modify	2 pad 5 amap 0.0 ${srate} ca 0.0 2 min blue max red
 
 restart 1000000 ${T}K.restart.A ${T}K.restart.B
-run		100000000 upto
-write_restart restart.pec5
+run		50000000 upto
+
+write_restart restart.pec6
